@@ -1,9 +1,16 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+    unset($_SESSION["account"]);
+?>
 <html>
 <head>
 <title>Login</title>
 </head>
 <body>
+    <header>
+        <h1>Alexandria Library</h1>
+    </header>
     <?php
         //connecting to the database
         require_once "database.php";
@@ -24,7 +31,7 @@
             else
             {
                 //creating the sql statement to find username to users table in library database
-                $sql = "SELECT * FROM users WHERE username = '$u'";
+                $sql = "SELECT * FROM users WHERE Username = '$u'";
 
                 //storing the row returned by the sql statement
                 $result = $conn->query($sql);
@@ -37,7 +44,9 @@
                     //if password matches, redirect to menu.php
                     if ($row["Password"] == $p)
                     {
+                        $_SESSION["account"] = $u;
                         header("Location: http://localhost/WebD/project/menu.php"); 
+                        exit;
                     }
                     else
                     {
