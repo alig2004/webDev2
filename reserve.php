@@ -10,6 +10,23 @@
         //connecting to the database
         require_once "database.php";
 
+        
+    }
+?>
+<html>
+    <head>
+        <title>Alexandria Library</title>
+    </head>
+    <body>
+        <a href="http://localhost/WebD/project/menu.php">Menu</a>
+    </body>
+    <?php
+        /*
+        - remove from reserved if desired (should also change marker in books table)
+        - link back to menu page
+        - logout
+        */
+
         $user = $_SESSION["account"];
 
         //displaying reserved table
@@ -21,17 +38,15 @@
         if ($result1->num_rows >0)
         {
             echo "<table border = '1'>";
-            //row titles
-            echo "<tr><td>";
-            echo "Book Title";
-            echo "</td><td>";
-            echo "Author";
-            echo "</td><td>";
-            echo  "ISBN";
-            echo "</td><td>";
-            echo "Date Reserved";
-            echo "</tr>";
             
+            //row titles
+            echo "<tr>";
+            echo "<td>Book Title</td>";
+            echo "<td>Author</td>";
+            echo "<td>ISBN</td>";
+            echo "<td>Date Reserved</td>";
+            echo "<td>Reservation Status</td></tr>";
+
             //iterating through rows from sql1 query
             while($row1 = $result1->fetch_assoc())
             {
@@ -43,17 +58,13 @@
                 //iterating through rows from sql2 query
                 while($row2 = $result2->fetch_assoc())
                 {
-                    echo "<tr><td>";
-                    echo (htmlentities($row2["BookTitle"]));
+                    echo "<tr>";
+                    echo "<td>".(htmlentities($row2["BookTitle"]))."</td>";
+                    echo "<td>".(htmlentities($row2["Author"]))."</td>";
+                    echo "<td>".(htmlentities($row1["ISBN"]))."</td>";
+                    echo "<td>".(htmlentities($row1["ReservedDate"]))."</td>";
                     echo "</td><td>";
-                    echo (htmlentities($row2["Author"]));
-                    echo "</td><td>";
-                    echo (htmlentities($row1["ISBN"]));
-                    echo "</td><td>";
-                    echo (htmlentities($row1["ReservedDate"]));
-                    //echo "</td><td>";
-                    //echo ('<a href="update.php?id='.htmlentities($row["ProductID"]).'">Edit</a> / ');
-                    //echo ('<a href="delete.php?id='.htmlentities($row["ProductID"]).'">Delete</a>');
+                    echo ('<a href="rem_reserve.php?isbn='.htmlentities($row1["ISBN"]).'">Remove Reservation</a>');
                     echo "</tr>\n";
                 }
                 
@@ -63,22 +74,6 @@
         {
             echo "You Don't Have Any Books Reserved!";
         }
-    }
-?>
-<html>
-    <head>
-        <title>Alexandria Library</title>
-    </head>
-    <body>
-        
-    </body>
-    <?php
-        /*
-        - retrieve data from reserved
-        - remove from reserved if desired (should also change marker in books table)
-        - link back to menu page
-        - logout
-        */
 
         //closing the connection
         $conn->close();
