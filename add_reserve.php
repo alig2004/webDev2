@@ -11,7 +11,7 @@
         require_once "database.php";
 
         //checking to make sure that all form positions are populated
-        if ( isset($_POST['delete']) && isset($_POST['ISBN']))
+        if ( isset($_POST['reserve']) && isset($_POST['ISBN']))
         {
             
             $isbn = $conn -> real_escape_string($_POST['ISBN']);
@@ -60,7 +60,6 @@
 
         //closing the connection
         $conn->close();
-        
     }
 ?>
 <html>
@@ -68,12 +67,16 @@
         <title>Alexandria Library</title>
     </head>
     <body>
-        <a href="http://localhost/WebD/project/menu.php">Menu</a>
+        <header>
+            <h1>Alexandria Library</h1>
+            <navbar>
+                <a href="menu.php">Search</a>
+                <a href="reserve.php">My Reservations</a>
+                <a href="logout.php">Log Out</a>
+            </navbar>
+        </header>
+        <footer>
+            <p><i>Copyright Alison Gleeson, 2024</i></p>
+        </footer>
     </body>
-    <?php
-        /*
-        - link back to menu page
-        - logout
-        */
-    ?>
 </html>
