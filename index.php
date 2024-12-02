@@ -5,11 +5,16 @@
 ?>
 <html>
 <head>
-<title>Login</title>
+    <title>Login</title>
 </head>
 <body>
     <header>
         <h1>Alexandria Library</h1>
+        <navbar>
+            <a href="menu.php">Search</a>
+            <a href="reserve.php">My Reservations</a>
+            <a href="logout.php">Log Out</a>
+        </navbar>
     </header>
     <?php
         //connecting to the database
@@ -74,5 +79,8 @@
         <input type="submit" value="Login"/>
     </form>
     <a href="register.php">Don't have an account? Click here to register</a>
+    <footer>
+        <p><i>Copyright Alison Gleeson, 2024</i></p>
+    </footer>
 </body>
 </html>
