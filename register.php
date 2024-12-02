@@ -4,6 +4,14 @@
         <title>Register</title>
     </head>
     <body>
+        <header>
+            <h1>Alexandria Library</h1>
+            <navbar>
+                <a href="menu.php">Search</a>
+                <a href="reserve.php">My Reservations</a>
+                <a href="logout.php">Log Out</a>
+            </navbar>
+        </header>
         <?php
             //connecting to the database
             require_once "database.php";
@@ -88,5 +96,8 @@
             <input type="submit" value="Register"/>
         </form>
         <a href="index.php">Already have an account? Click here to login</a>
+        <footer>
+            <p><i>Copyright Alison Gleeson, 2024</i></p>
+        </footer>
     </body>
 </html>
