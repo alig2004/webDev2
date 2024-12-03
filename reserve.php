@@ -14,16 +14,22 @@
 <html>
     <head>
         <title>Your Reservations</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="library.css">
     </head>
-    <header>
-        <h1>Alexandria Library</h1>
-        <navbar>
-            <a href="menu.php">Search</a>
-            <a href="reserve.php">My Reservations</a>
-            <a href="logout.php">Log Out</a>
-        </navbar>
-    </header>
+    
     <body>
+        <header>
+            <h1>Alexandria Library</h1>
+        </header>
+        <navbar>
+            <nav>
+                <a href="menu.php">Search</a>
+                <a href="reserve.php">My Reservations</a>
+                <a href="logout.php">Log Out</a>
+            </nav>
+        </navbar>
         <?php
 
             $user = $_SESSION["account"];
