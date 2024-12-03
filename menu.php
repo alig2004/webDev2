@@ -14,18 +14,24 @@
 <html>
     <head>
         <title>Alexandria Library</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="library.css">
     </head>
     <body>
     <header>
         <h1>Alexandria Library</h1>
-        <navbar>
+    </header>
+    <navbar>
+        <nav>
             <a href="menu.php">Search</a>
             <a href="reserve.php">My Reservations</a>
             <a href="logout.php">Log Out</a>
-        </navbar>
-    </header>
-    <h2>Search:</h2>
-    <p>To see our entire catalogue, press 'Search' without filling in the form.</p>
+        </nav>
+    </navbar>
+    <div class="search_form">
+        <h2>Search:</h2>
+        <p>To see our entire catalogue, press 'Search' without filling in the form.</p>
         <form method="post">
             <label>Title:</label>
             <input type="text" name="title">
@@ -52,6 +58,7 @@
             <input type="submit" value="Search"/>
             <br><br>
         </form>
+    </div>
         <?php
             //checking to make sure that all form positions are populated
             if (isset($_POST['title']) && isset($_POST['auth']) && isset($_POST['category']))
