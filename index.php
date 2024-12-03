@@ -6,16 +6,21 @@
 <html>
 <head>
     <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="library.css">
 </head>
 <body>
     <header>
         <h1>Alexandria Library</h1>
-        <navbar>
+    </header>
+    <navbar>
+        <nav>
             <a href="menu.php">Search</a>
             <a href="reserve.php">My Reservations</a>
             <a href="logout.php">Log Out</a>
-        </navbar>
-    </header>
+        </nav>
+    </navbar>
     <?php
         //connecting to the database
         require_once "database.php";
@@ -70,15 +75,18 @@
         //closing the connection
         $conn->close();
     ?>
-    <h2>Login:</h2>
-    <form method="post">
-        <label>Username:</label><br>
-        <input type="text" name="Username" required><br>
-        <label>Password:</label><br>
-        <input type="password" name="Password" required><br><br>
-        <input type="submit" value="Login"/>
-    </form>
-    <a href="register.php">Don't have an account? Click here to register</a>
+    <div class="login_form">
+        <h2>Login:</h2>
+        <form method="post">
+            <label>Username:</label><br>
+            <input type="text" name="Username" required><br><br>
+            <label>Password:</label><br>
+            <input type="password" name="Password" required><br><br>
+            <input type="submit" value="Login"/>
+        </form>
+        <br>
+        <a href="register.php">Don't have an account? Click here to register</a>
+    </div>
     <footer>
         <p><i>Copyright Alison Gleeson, 2024</i></p>
     </footer>
