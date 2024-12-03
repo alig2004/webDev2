@@ -2,16 +2,21 @@
 <html>
     <head>
         <title>Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="library.css">
     </head>
     <body>
         <header>
             <h1>Alexandria Library</h1>
-            <navbar>
+        </header>
+        <navbar>
+            <nav>
                 <a href="menu.php">Search</a>
                 <a href="reserve.php">My Reservations</a>
                 <a href="logout.php">Log Out</a>
-            </navbar>
-        </header>
+            </nav>
+        </navbar>
         <?php
             //connecting to the database
             require_once "database.php";
