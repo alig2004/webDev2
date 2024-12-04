@@ -71,7 +71,7 @@
                 header("Location: http://localhost/WebD/project/display.php?t=".$t."&a=".$a."&c=".$c."&i=".$i."");
             }
         ?>
-        <footer>
+        <footer class="common_footer">
             <p><i>Copyright Alison Gleeson, 2024</i></p>
         </footer>
     </body>
