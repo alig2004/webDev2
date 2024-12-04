@@ -2,10 +2,12 @@ header
 {
     text-align: center;
     background-image: url(header-background.jpg);
-    padding-left: 3%;
-    padding-right: 3%;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
+    position: inherit;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 header h1
@@ -22,33 +24,45 @@ header h1
 nav
 {
     text-align: center;
-    background-color: #817E9F;
+    background-color: #5ef2ff;
     font-size: large;
     padding: 1%;
 }
 
-a :visited
+a:visited
 {
-    color: black;
+    color: rgb(57, 9, 111);
 }
 
-nav a :hover
+a:hover
 {
-    background-color: #6d63e1;
+    background-color: #20ecff;
 }
 
 nav a 
 {
     text-decoration: none;
-    padding: 11%;
+    padding: 1.05% 11%;
 }
 
 footer
 {
     text-align: center;
-    background-color: #817E9F;
+    background-color: #5ef2ff;
     padding-top: 0.6%;
     padding-bottom: 0.6%;
+}
+
+.common_footer
+{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.scroll_footer
+{
+    position:initial;
 }
 
 .login_form
@@ -58,9 +72,10 @@ footer
     border-radius: 20%;
     border-color: black;
     border-style: double;
-    margin: 3% 35%;
-    padding-top: 3%;
-    padding-bottom: 4%;
+    margin: 2% 35%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    font-size: large;
 }
 
 .search_form
@@ -73,10 +88,100 @@ footer
     margin: 6% 27% 7% 27%;
     padding-top: 2%;
     padding-bottom: 3%;
+    font-size: large;
 }
 
+.register_form
+{
+    background-color: white;
+    text-align: center;
+    border-radius: 10%;
+    border-color: black;
+    border-style: double;
+    margin: 3% 33% 4% 33%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    font-size: large;
+}
+
+.edit_reserve
+{
+    background-color: white;
+    text-align: center;
+    border-radius: 10%;
+    border-color: black;
+    border-style: double;
+    margin: 5% 33% 4% 33%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: large;
+}
+
+input[type=submit]
+{
+    font-size: medium;
+}
+
+#no_reservation 
+{
+    text-align: center;
+    font-size: larger;
+    padding-top: 2%;
+}
+
+tr, td
+{
+    border: 2px solid black;
+    padding: auto;
+}
+
+table
+{
+    text-align: center;
+    align-self: center;
+    margin: auto;
+    margin-top: 6%;
+    background-color: white;
+    font-size: medium;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.click_forward
+{
+    padding: 0.5% 0.5%;
+    border-radius: 15%;
+    background-color: #5ef2ff;
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 47%;
+}
+
+.click_back
+{
+    padding: 0.5% 0.5%;
+    border-radius: 15%;
+    background-color: #5ef2ff;
+    border: 1px solid black;
+    margin-left: 46%;
+}
+
+.last_back
+{
+    padding: 0.5% 0.5%;
+    border-radius: 15%;
+    background-color: #5ef2ff;
+    border: 1px solid black;
+    margin-left: 47%;
+}
+
+.error
+{
+    color: red;
+}
 
 body
 {
     background-color: #B5F8FE;
+    margin: 0;
 }
