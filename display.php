@@ -54,7 +54,7 @@
 
                 if ($result1->num_rows > 0)
                 {
-                    echo "<table border = '1'>";
+                    echo "<table>";
                     
                     //row titles
                     echo "<tr>";
@@ -97,6 +97,8 @@
                                 echo "</tr>\n";
                             }
                         }
+
+                        echo "</table>";
                     }
                     else //if number of rows returned is greater than 5
                     {
@@ -151,6 +153,7 @@
                         }
 
                         echo "</table>";
+                        echo "<br>";
 
                         //if 5 rows have been displayed 
                         if ($first == False)
@@ -159,18 +162,18 @@
                             if ($prev < 0)
                             {
                                 $prev = 0;
-                                echo '<a href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$prev.'">First Page</a>';
+                                echo '<a class="last_back" href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$prev.'">First Page</a>';
                             }
                             else
                             {
-                                echo '<a href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$prev.'">Previous Page</a>';
+                                echo '<a class="click_back" href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$prev.'">Previous Page</a><br><br>';
                             }
                             
                         }
 
                         if ($amount - ($i - 5) > 5)
                         {
-                            echo '<a href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$i.'">Next Page</a>';
+                            echo '<a class="click_forward" href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$i.'">Next Page</a>';
                         }
                         
                         
@@ -190,7 +193,7 @@
 
                 if ($result1->num_rows > 0)
                 {
-                    echo "<table border = '1'>";
+                    echo "<table>";
                     
                     //row titles
                     echo "<tr>";
@@ -232,7 +235,11 @@
                                 }
                                 echo "</tr>\n";
                             }
+
                         }
+
+                        echo "</table>";
+                        
                     }
                     else //if number of rows returned is greater than 5
                     {
@@ -295,18 +302,18 @@
                             if ($prev < 0)
                             {
                                 $prev = 0;
-                                echo '<a href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$prev.'">First Page</a>';
+                                echo '<a class="click_back" href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$prev.'">First Page</a>';
                             }
                             else
                             {
-                                echo '<a href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$prev.'">Previous Page</a>';
+                                echo '<a class="click_back" href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$prev.'">Previous Page</a>';
                             }
                             
                         }
 
                         if ($amount - ($i - 5) > 5)
                         {
-                            echo '<a href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$i.'">Next Page</a>';
+                            echo '<a class="click_forward" href="display.php?t='.$t.'&a='.$a.'&c='.$c.'&i='.$i.'">Next Page</a>';
                         }
                         
                         
@@ -318,12 +325,11 @@
                 }
             }
 
+            $conn->close();
+
         ?>
-        <footer>
+        <footer class="common_footer">
             <p><i>Copyright Alison Gleeson, 2024</i></p>
         </footer>
     </body>
-    <?php
-        $conn->close();
-    ?>
 </html>
