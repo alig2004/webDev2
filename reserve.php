@@ -42,7 +42,7 @@
             //outputting data from each row
             if ($result1->num_rows >0)
             {
-                echo "<table border = '1'>";
+                echo '<table>';
                 
                 //row titles
                 echo "<tr>";
@@ -81,13 +81,13 @@
             }
             else
             {
-                echo "No books reserved. Return to menu to search and reserve books";
+                echo '<p id="no_reservation">No books reserved. Return to menu to search and reserve books</p>';
             }
 
             //closing the connection
             $conn->close();
         ?>
-        <footer>
+        <footer class="common_footer">
             <p><i>Copyright Alison Gleeson, 2024</i></p>
         </footer>
     </body>
