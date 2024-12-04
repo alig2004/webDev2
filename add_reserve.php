@@ -71,17 +71,19 @@
             $result3 = $conn->query($sql3);
             $row3 = $result3->fetch_assoc();
 
+            echo '<div class="edit_reserve">';
             echo "<p>Reserve ". $row3['ISBN'] ." " . $row3['BookTitle'] . "?</p><br>";
             echo ('<form method="post"><input type="hidden" ');
             echo ('name="ISBN" value="'.htmlentities($row3['ISBN']).'"><br>');
             echo ('<input type="submit" value="Reserve" name="reserve">');
-            echo ('<a href="menu.php">Cancel</a>');
+            echo ('<br><br><a href="menu.php">Cancel</a>');
             echo ("<br></form><br>");
+            echo '</div>';
 
             //closing the connection
             $conn->close();
         ?>
-        <footer>
+        <footer class="common_footer">
             <p><i>Copyright Alison Gleeson, 2024</i></p>
         </footer>
     </body>
