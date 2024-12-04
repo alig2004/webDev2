@@ -73,17 +73,19 @@
             $result4 = $conn->query($sql4);
             $row4 = $result4->fetch_assoc();
 
+            echo '<div class="edit_reserve">';
             echo "<p>Remove reservation from ". $row3['ISBN'] ." " . $row4['BookTitle'] . "?</p><br>";
             echo ('<form method="post"><input type="hidden" ');
             echo ('name="ISBN" value="'.htmlentities($row3['ISBN']).'"><br>');
             echo ('<input type="submit" value="Remove" name="delete">');
-            echo ('<a href="reserve.php">Cancel</a>');
+            echo ('<br><br><a href="reserve.php">Cancel</a>');
             echo ("<br></form><br>");
+            echo '</div>';
 
             //closing the connection
             $conn->close();
         ?>
-        <footer>
+        <footer class="common_footer">
             <p><i>Copyright Alison Gleeson, 2024</i></p>
         </footer>
     </body>
